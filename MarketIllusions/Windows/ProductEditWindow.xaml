@@ -1,0 +1,60 @@
+﻿<Window x:Class="MarketIllusions.Windows.ProductEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование товара" 
+        Height="550" Width="450"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource WhiteBrush}">
+    <Grid Margin="20">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock x:Name="TitleTextBlock" 
+                           Text="Редактирование товара" 
+                           Style="{StaticResource HeaderStyle}"/>
+
+                <Label Content="Название"/>
+                <TextBox x:Name="NameTextBox" Height="35"/>
+
+                <Label Content="Описание"/>
+                <TextBox x:Name="DescriptionTextBox" 
+                         Height="80" 
+                         TextWrapping="Wrap" 
+                         AcceptsReturn="True"/>
+
+                <Label Content="Цена"/>
+                <TextBox x:Name="PriceTextBox" Height="35"/>
+
+                <Label Content="Категория"/>
+                <ComboBox x:Name="CategoryComboBox" Height="35"/>
+
+                <Label Content="Невидимое свойство"/>
+                <TextBox x:Name="InvisiblePropertyTextBox" Height="35"/>
+
+                <Label Content="Чистота (%)"/>
+                <TextBox x:Name="PurityTextBox" Height="35"/>
+
+                <Label Content="Длительность (мин)"/>
+                <TextBox x:Name="DurationTextBox" Height="35"/>
+
+                <Grid Margin="0,25,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Content="Сохранить" 
+                            Grid.Column="0" 
+                            Margin="0,0,5,0"
+                            Height="40"
+                            Click="SaveButton_Click"/>
+                    <Button Content="Отмена" 
+                            Grid.Column="1" 
+                            Margin="5,0,0,0"
+                            Height="40"
+                            Background="{StaticResource LightGrayBrush}"
+                            Click="CancelButton_Click"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,89 @@
+﻿<Page x:Class="MarketIllusions.Pages.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="ProfilePage"
+      Background="{StaticResource WhiteBrush}">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Профиль пользователя" 
+                   Style="{StaticResource HeaderStyle}"/>
+
+        <ScrollViewer Grid.Row="1" 
+                      VerticalScrollBarVisibility="Auto">
+            <StackPanel Width="400" 
+                        HorizontalAlignment="Center">
+
+                <!-- Аватар -->
+                <Border Width="150" 
+                        Height="150" 
+                        CornerRadius="75" 
+                        Background="{StaticResource LightGrayBrush}"
+                        BorderBrush="{StaticResource BorderBrush}" 
+                        BorderThickness="1"
+                        Margin="0,0,0,20">
+                    <Image x:Name="AvatarImage" 
+                           Stretch="UniformToFill">
+                        <Image.Clip>
+                            <EllipseGeometry Center="75,75" 
+                                            RadiusX="75" 
+                                            RadiusY="75"/>
+                        </Image.Clip>
+                    </Image>
+                </Border>
+
+                <Button Content="Выбрать аватар" 
+                        Click="ChooseAvatarButton_Click" 
+                        Width="150" 
+                        Height="35"
+                        Margin="0,0,0,20"/>
+
+                <Label Content="Логин"/>
+                <TextBox x:Name="LoginTextBox" 
+                         IsReadOnly="True" 
+                         Background="{StaticResource LightGrayBrush}"
+                         Height="35"/>
+
+                <Label Content="Полное имя"/>
+                <TextBox x:Name="FullNameTextBox" Height="35"/>
+
+                <Label Content="Email"/>
+                <TextBox x:Name="EmailTextBox" Height="35"/>
+
+                <Label Content="Телефон"/>
+                <TextBox x:Name="PhoneTextBox" Height="35"/>
+
+                <Label Content="Уровень внушаемости"/>
+                <TextBox x:Name="SuggestibilityTextBox" Height="35"/>
+
+                <Label Content="Новый пароль"/>
+                <PasswordBox x:Name="NewPasswordBox" Height="35"/>
+
+                <Label Content="Подтверждение пароля"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Height="35"/>
+
+                <Grid Margin="0,25,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Content="Сохранить" 
+                            Grid.Column="0" 
+                            Margin="0,0,5,0"
+                            Height="40"
+                            Click="SaveButton_Click"/>
+                    <Button Content="Отмена" 
+                            Grid.Column="1" 
+                            Margin="5,0,0,0"
+                            Height="40"
+                            Background="{StaticResource LightGrayBrush}"
+                            Click="CancelButton_Click"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

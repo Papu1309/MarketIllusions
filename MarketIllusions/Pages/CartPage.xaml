@@ -1,0 +1,119 @@
+﻿<Page x:Class="MarketIllusions.Pages.CartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="CartPage"
+      Background="{StaticResource WhiteBrush}">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Корзина" 
+                   Style="{StaticResource HeaderStyle}"/>
+
+        <ScrollViewer Grid.Row="1">
+            <ItemsControl x:Name="CartItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource CardStyle}" 
+                                Margin="0,0,0,8">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="{Binding Product.Name}" 
+                                               FontWeight="Bold"
+                                               FontSize="14"
+                                               Foreground="{StaticResource TextBrush}"/>
+                                    <TextBlock Text="{Binding Product.Description}" 
+                                               FontSize="11" 
+                                               Foreground="{StaticResource DarkTextBrush}"
+                                               Margin="0,5,0,0"/>
+                                    <TextBlock Text="{Binding Product.InvisibleProperty}" 
+                                               FontSize="10" 
+                                               Foreground="{StaticResource AccentBrush}"
+                                               Margin="0,5,0,0"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1" 
+                                            Orientation="Horizontal" 
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center">
+                                    <Button Content="−" 
+                                            Width="30" 
+                                            Height="30"
+                                            Click="DecreaseQuantity_Click"
+                                            Tag="{Binding}"/>
+                                    <TextBlock Text="{Binding Quantity}" 
+                                               Width="40" 
+                                               TextAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               FontSize="14"/>
+                                    <Button Content="+" 
+                                            Width="30" 
+                                            Height="30"
+                                            Click="IncreaseQuantity_Click"
+                                            Tag="{Binding}"/>
+                                </StackPanel>
+
+                                <TextBlock Grid.Column="2" 
+                                           Text="{Binding Product.Price, StringFormat=C}" 
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           FontSize="14"/>
+
+                                <Button Grid.Column="3" 
+                                        Content="Удалить" 
+                                        Width="90"
+                                        Height="35"
+                                        Click="RemoveItem_Click"
+                                        Tag="{Binding}"
+                                        Background="{StaticResource LightGrayBrush}"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Border Grid.Row="2" 
+                Background="{StaticResource LightGrayBrush}" 
+                Padding="15" 
+                Margin="0,15,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="TotalTextBlock" 
+                           Grid.Column="0" 
+                           FontSize="16" 
+                           FontWeight="Light"
+                           Foreground="{StaticResource TextBrush}"
+                           VerticalAlignment="Center"/>
+
+                <Button Grid.Column="1" 
+                        Content="Очистить" 
+                        Height="40"
+                        Click="ClearCartButton_Click" 
+                        Margin="0,0,5,0"
+                        Background="{StaticResource WhiteBrush}"/>
+
+                <Button Grid.Column="2" 
+                        Content="Оформить заказ" 
+                        Height="40"
+                        Click="CheckoutButton_Click" 
+                        Margin="5,0,0,0"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

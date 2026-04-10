@@ -1,0 +1,54 @@
+﻿<Page x:Class="MarketIllusions.Pages.CatalogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="CatalogPage"
+      Background="{StaticResource WhiteBrush}">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal" 
+                    Margin="0,0,0,15">
+            <TextBlock Text="Каталог товаров" 
+                       Style="{StaticResource HeaderStyle}" 
+                       VerticalAlignment="Center"
+                       Margin="0,0,30,0"/>
+
+            <ComboBox x:Name="CategoryFilterComboBox" 
+                      Width="200" 
+                      Margin="0,0,15,0"
+                      SelectionChanged="CategoryFilterComboBox_SelectionChanged"
+                      VerticalAlignment="Center">
+                <ComboBoxItem Content="Все категории" IsSelected="True"/>
+            </ComboBox>
+
+            <TextBox x:Name="SearchTextBox" 
+                Width="250" 
+                Text=""
+                TextChanged="SearchTextBox_TextChanged"
+                VerticalAlignment="Center"
+                Margin="0,0,0,0">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+                        <Setter Property="Margin" Value="0"/>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+
+            <TextBlock Text="🔍" 
+                       FontSize="14"
+                       Foreground="{StaticResource AccentBrush}"
+                       Margin="5,0,0,0"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" 
+                      VerticalScrollBarVisibility="Auto"
+                      Background="{StaticResource WhiteBrush}">
+            <WrapPanel x:Name="ProductsWrapPanel"/>
+        </ScrollViewer>
+    </Grid>
+</Page>
