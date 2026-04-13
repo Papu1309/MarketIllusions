@@ -89,7 +89,6 @@ namespace MarketIllusions.Pages
 
             try
             {
-                // Создаем заказ
                 var order = new Orders
                 {
                     UserId = App.CurrentUserId,
@@ -103,7 +102,6 @@ namespace MarketIllusions.Pages
                 Connection.entities.Orders.Add(order);
                 Connection.entities.SaveChanges();
 
-                // Добавляем детали заказа
                 foreach (var item in CartItems)
                 {
                     var orderDetail = new OrderDetails
@@ -123,7 +121,6 @@ namespace MarketIllusions.Pages
                 MessageBox.Show($"Заказ №{order.Id} оформлен!\nСумма: {order.TotalAmount:C}\nЧек будет пустым, как и полагается.",
                     "Заказ оформлен", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Очищаем корзину
                 CartItems.Clear();
                 CartHelper.ClearCart();
                 UpdateTotal();

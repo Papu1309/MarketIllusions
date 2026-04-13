@@ -80,7 +80,6 @@ namespace MarketIllusions.Pages
         {
             try
             {
-                // Загружаем историю с включением связанных данных
                 var history = Connection.entities.ProductHistory
                     .Include("Products")
                     .Include("Users")
@@ -89,7 +88,6 @@ namespace MarketIllusions.Pages
 
                 HistoryDataGrid.ItemsSource = history;
 
-                // Если история пуста, можно показать сообщение
                 if (history == null || !history.Any())
                 {
                     System.Windows.MessageBox.Show("История изменений пуста",
@@ -152,7 +150,6 @@ namespace MarketIllusions.Pages
             {
                 try
                 {
-                    // Проверяем, не является ли пользователь администратором
                     if (selectedUser.Roles.Name == "Администратор")
                     {
                         var adminCount = Connection.entities.Users
@@ -166,7 +163,6 @@ namespace MarketIllusions.Pages
                         }
                     }
 
-                    // Удаляем связанные заказы
                     var orders = Connection.entities.Orders
                         .Where(o => o.UserId == selectedUser.Id)
                         .ToList();
@@ -185,7 +181,6 @@ namespace MarketIllusions.Pages
                         Connection.entities.Orders.Remove(order);
                     }
 
-                    // Удаляем иллюзии пользователя
                     var illusions = Connection.entities.Illusions
                         .Where(i => i.TargetUserId == selectedUser.Id)
                         .ToList();
@@ -195,7 +190,6 @@ namespace MarketIllusions.Pages
                         Connection.entities.Illusions.Remove(illusion);
                     }
 
-                    // Удаляем пользователя
                     Connection.entities.Users.Remove(selectedUser);
                     Connection.entities.SaveChanges();
 
@@ -260,7 +254,6 @@ namespace MarketIllusions.Pages
             {
                 try
                 {
-                    // Удаляем связанные записи
                     var orderDetails = Connection.entities.OrderDetails
                         .Where(od => od.ProductId == selectedProduct.Id)
                         .ToList();
@@ -317,7 +310,6 @@ namespace MarketIllusions.Pages
         {
             if (selectedOrder == null) return;
 
-            // Создаем WPF окно для изменения статуса
             OrderStatusWindow statusWindow = new OrderStatusWindow(selectedOrder);
             statusWindow.ShowDialog();
             LoadOrders();

@@ -24,7 +24,6 @@ namespace MarketIllusions.Pages
         {
             try
             {
-                // Загружаем пользователей
                 var users = Connection.entities.Users
                     .Where(u => u.RoleId == 2)
                     .ToList();
@@ -32,7 +31,6 @@ namespace MarketIllusions.Pages
                 TargetUserComboBox.DisplayMemberPath = "FullName";
                 TargetUserComboBox.SelectedValuePath = "Id";
 
-                // Загружаем заказы
                 var orders = Connection.entities.Orders
                     .OrderByDescending(o => o.OrderDate)
                     .ToList();
@@ -140,7 +138,6 @@ namespace MarketIllusions.Pages
                 MessageBox.Show("Иллюзия создана!", "Успех",
                     MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Очищаем поля
                 IllusionNameTextBox.Text = "";
                 IllusionDescriptionTextBox.Text = "";
                 IllusionPowerTextBox.Text = "50";

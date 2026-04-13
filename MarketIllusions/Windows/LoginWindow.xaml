@@ -50,7 +50,6 @@
                        Margin="0,15,0,0"
                        FontSize="12"/>
 
-            <!-- Подсказка -->
             <TextBlock Text="admin / admin123" 
                        FontSize="10"
                        Foreground="{StaticResource AccentBrush}"

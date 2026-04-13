@@ -117,7 +117,6 @@ namespace MarketIllusions.Pages
 
                 var stackPanel = new StackPanel();
 
-                // Изображение
                 var image = new Image();
                 image.Width = 200;
                 image.Height = 150;
@@ -143,7 +142,6 @@ namespace MarketIllusions.Pages
 
                 stackPanel.Children.Add(image);
 
-                // Название
                 var nameText = new TextBlock();
                 nameText.Text = product.Name;
                 nameText.FontWeight = FontWeights.Bold;
@@ -152,7 +150,6 @@ namespace MarketIllusions.Pages
                 nameText.TextWrapping = TextWrapping.Wrap;
                 stackPanel.Children.Add(nameText);
 
-                // Описание
                 var descText = new TextBlock();
                 descText.Text = product.Description;
                 descText.FontSize = 11;
@@ -162,7 +159,6 @@ namespace MarketIllusions.Pages
                 descText.MaxHeight = 40;
                 stackPanel.Children.Add(descText);
 
-                // Цена
                 var priceText = new TextBlock();
                 priceText.Text = $"Цена: {product.Price:C}";
                 priceText.FontSize = 12;
@@ -170,7 +166,6 @@ namespace MarketIllusions.Pages
                 priceText.Margin = new Thickness(0, 0, 0, 5);
                 stackPanel.Children.Add(priceText);
 
-                // Невидимое свойство
                 var invisibleText = new TextBlock();
                 invisibleText.Text = $"Свойство: {product.InvisibleProperty}";
                 invisibleText.FontSize = 10;
@@ -178,7 +173,6 @@ namespace MarketIllusions.Pages
                 invisibleText.Margin = new Thickness(0, 0, 0, 5);
                 stackPanel.Children.Add(invisibleText);
 
-                // Кнопки действий
                 var buttonPanel = new StackPanel();
                 buttonPanel.Orientation = Orientation.Horizontal;
                 buttonPanel.HorizontalAlignment = HorizontalAlignment.Center;

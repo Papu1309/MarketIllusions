@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="Windows/LoginWindow.xaml">
     <Application.Resources>
-        <!-- Цветовая схема -->
         <SolidColorBrush x:Key="WhiteBrush" Color="#FFFFFF"/>
         <SolidColorBrush x:Key="LightGrayBrush" Color="#F0F0F0"/>
         <SolidColorBrush x:Key="AccentBrush" Color="#CCCCCC"/>
@@ -11,17 +10,13 @@
         <SolidColorBrush x:Key="BorderBrush" Color="#DDDDDD"/>
         <SolidColorBrush x:Key="DarkTextBrush" Color="#666666"/>
 
-        <!-- Шрифты -->
         <FontFamily x:Key="MainFont">Segoe UI</FontFamily>
-        <!-- Используем Segoe UI как замену Helvetica Neue -->
 
-        <!-- Стиль для Window -->
         <Style TargetType="Window">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
         </Style>
 
-        <!-- Стиль для кнопок -->
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="12"/>
@@ -55,7 +50,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Стиль для TextBox -->
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="12"/>
@@ -67,7 +61,6 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
-        <!-- Стиль для PasswordBox -->
         <Style TargetType="PasswordBox">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="12"/>
@@ -79,7 +72,6 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
-        <!-- Стиль для Label -->
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="12"/>
@@ -88,7 +80,6 @@
             <Setter Property="Padding" Value="0"/>
         </Style>
 
-        <!-- Стиль для ListBox -->
         <Style TargetType="ListBox">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
@@ -96,7 +87,6 @@
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
 
-        <!-- Стиль для DataGrid -->
         <Style TargetType="DataGrid">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="12"/>
@@ -110,7 +100,6 @@
             <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource BorderBrush}"/>
         </Style>
 
-        <!-- Стиль для DataGridColumnHeader -->
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="{StaticResource LightGrayBrush}"/>
             <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
@@ -120,14 +109,12 @@
             <Setter Property="BorderThickness" Value="0,0,1,1"/>
         </Style>
 
-        <!-- Стиль для DataGridCell -->
         <Style TargetType="DataGridCell">
             <Setter Property="Padding" Value="8,6"/>
             <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
             <Setter Property="BorderThickness" Value="0,0,1,0"/>
         </Style>
 
-        <!-- Стиль для ComboBox -->
         <Style TargetType="ComboBox">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="12"/>
@@ -137,14 +124,12 @@
             <Setter Property="Margin" Value="0,2,0,8"/>
         </Style>
 
-        <!-- Стиль для TabControl -->
         <Style TargetType="TabControl">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
             <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         </Style>
 
-        <!-- Стиль для TabItem -->
         <Style TargetType="TabItem">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="12"/>
@@ -171,12 +156,10 @@
             </Setter>
         </Style>
 
-        <!-- Стиль для ScrollViewer -->
         <Style TargetType="ScrollViewer">
             <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
         </Style>
 
-        <!-- Стиль для заголовков -->
         <Style TargetType="TextBlock" x:Key="HeaderStyle">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="FontSize" Value="20"/>
@@ -185,7 +168,6 @@
             <Setter Property="Margin" Value="0,0,0,15"/>
         </Style>
 
-        <!-- Стиль для карточек товаров -->
         <Style TargetType="Border" x:Key="CardStyle">
             <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
             <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
@@ -195,7 +177,6 @@
             <Setter Property="Margin" Value="8"/>
         </Style>
 
-        <!-- Стиль для Page -->
         <Style TargetType="Page">
             <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
             <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>

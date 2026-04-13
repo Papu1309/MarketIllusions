@@ -24,7 +24,6 @@ namespace MarketIllusions.Connect
             return user?.Roles?.Name;
         }
 
-        // Метод для проверки подключения
         public static bool TestConnection()
         {
             try

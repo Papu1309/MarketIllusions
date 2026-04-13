@@ -93,12 +93,11 @@
                NavigationUIVisibility="Hidden"
                Background="{StaticResource WhiteBrush}"/>
 
-        <!-- Нижняя панель -->
         <Border Grid.Row="2" 
                 Background="{StaticResource LightGrayBrush}"
                 BorderBrush="{StaticResource BorderBrush}" 
                 BorderThickness="0,1,0,0">
-            <TextBlock Text="© 2024 Магазин воздуха, тишины и времени. Все права защищены." 
+            <TextBlock Text="МагазинЧИК Ильмира (Великий ОНГОИНГ) воздуха, тишины и времени." 
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center" 
                        FontSize="11"

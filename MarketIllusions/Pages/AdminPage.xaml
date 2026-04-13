@@ -5,7 +5,6 @@
       Background="{StaticResource WhiteBrush}">
     <Grid Margin="10">
         <TabControl>
-            <!-- Вкладка пользователей -->
             <TabItem Header="Пользователи">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
@@ -59,7 +58,6 @@
                 </Grid>
             </TabItem>
 
-            <!-- Вкладка товаров -->
             <TabItem Header="Товары">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
@@ -113,7 +111,6 @@
                 </Grid>
             </TabItem>
 
-            <!-- Вкладка заказов -->
             <TabItem Header="Заказы">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>

@@ -80,7 +80,7 @@ namespace MarketIllusions.Windows
                 if (int.TryParse(DurationTextBox.Text, out int duration))
                     product.DurationMinutes = duration;
 
-                product.Quantity = 0; // Склад всегда пуст
+                product.Quantity = 0; 
 
                 if (isNew)
                 {
@@ -89,7 +89,6 @@ namespace MarketIllusions.Windows
                 }
                 else
                 {
-                    // Записываем в историю изменение цены
                     var oldProduct = Connection.entities.Products
                         .AsNoTracking()
                         .FirstOrDefault(p => p.Id == product.Id);

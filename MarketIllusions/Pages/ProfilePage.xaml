@@ -17,7 +17,6 @@
             <StackPanel Width="400" 
                         HorizontalAlignment="Center">
 
-                <!-- Аватар -->
                 <Border Width="150" 
                         Height="150" 
                         CornerRadius="75" 

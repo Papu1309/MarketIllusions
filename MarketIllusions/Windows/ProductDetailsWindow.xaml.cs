@@ -106,7 +106,6 @@ namespace MarketIllusions.Windows
         {
             try
             {
-                // Загружаем историю изменений для данного товара
                 var history = Connection.entities.ProductHistory
                     .Include("Users")
                     .Where(h => h.ProductId == product.Id)
@@ -119,7 +118,6 @@ namespace MarketIllusions.Windows
                 }
                 else
                 {
-                    // Если истории нет, показываем сообщение
                     HistoryDataGrid.ItemsSource = null;
                     System.Windows.MessageBox.Show("История изменений отсутствует",
                         "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -136,8 +134,6 @@ namespace MarketIllusions.Windows
         {
             try
             {
-                // Загружаем иллюзии, связанные с этим товаром
-                // Ищем по названию товара в описании иллюзии
                 var illusions = Connection.entities.Illusions
                     .Where(i => i.Description.Contains(product.Name) ||
                                i.Description.Contains(product.InvisibleProperty))
@@ -150,7 +146,6 @@ namespace MarketIllusions.Windows
                 }
                 else
                 {
-                    // Если иллюзий нет, показываем сообщение
                     IllusionsDataGrid.ItemsSource = null;
                 }
             }
